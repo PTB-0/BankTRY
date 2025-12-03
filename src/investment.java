@@ -1,9 +1,9 @@
 import java.util.Random;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
-
 /*burası yeni bir dosyaya konuşlcak ve yanına import java.utils.random.* ; eklejnecek */
 public  class investment extends Account {
+    double bal ;
     double fee = 10 ;
     public void invest(double howmny){
         if (bal < howmny + fee) {
@@ -15,7 +15,7 @@ public  class investment extends Account {
             IntStream wich = a.ints();
             DoubleStream b = a.doubles();
             b = (double) b ;                        /*kütüphanemi yanlış acaba */
-            if (wich % 2 = 0){
+            if (wich % 2 = 0){                              /*ozaman başka hangi kütüphaneyi kullancağız*/
                 bal += b + howmny - fee ;
             }
             else {
