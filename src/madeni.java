@@ -16,8 +16,8 @@ public class madeni extends investment {
             System.out.println("Ne kadar almak istersiniz (Gram olarak)");
             double howmc = in.nextDouble();
             double odenmek = howmc * altinG ;
-            int istekAltin =
-            double newFiyat =
+            int istekAltin = istek + 1 ;
+            double newFiyat = (((istek * altinG) /2) / (altinG - 100 *(2+20))) ;
         } else if (ask.equals("Gümüş")) {
             System.out.println("Gram fiyatı :" + gumusG);
         } else if (ask.equals("Platin")) {
