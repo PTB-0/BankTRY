@@ -27,13 +27,14 @@ public class Account{
         Account.this.bal =  num - fee ;
     }
     public void transfer(Account whom , double howmc){
-        if (bal >= howmc){
-            whom.addBal(howmc);
-            bal = bal - howmc + fee ;
-            System.out.println("İşlem başarı ile gerçekleşmiştir \n işlemden sonra kalan bakiyeniz : \n" + bal);
-        }
-        else {
-            System.out.println("BAKİYENİZ YETERSİZ\n Bakiyeniz :" + bal + "\n göndermeye çalıştığınız tutar" + howmc);
+        if (howmc >= 0) {
+            if (bal >= howmc) {
+                whom.addBal(howmc);
+                bal = bal - howmc + fee;
+                System.out.println("İşlem başarı ile gerçekleşmiştir \n işlemden sonra kalan bakiyeniz : \n" + bal);
+            } else {
+                System.out.println("BAKİYENİZ YETERSİZ\n Bakiyeniz :" + bal + "\n göndermeye çalıştığınız tutar" + howmc);
+            }
         }
     }
     public void VERGI(){
