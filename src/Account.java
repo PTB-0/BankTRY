@@ -1,14 +1,30 @@
 import java.util.Random;
-import java.util.random.*;
-import java.util.stream.DoubleStream;
-import java.util.stream.IntStream;
-import java.util.Scanner;
 
 public class Account{
-    double bal ;
+    private String isim ;
+    public String getIsim(){
+        return isim ;
+    }
+    public Account(String isim){
+        this.isim = isim ;
+    }
+    public Account(){
+        this.isim = "Bilmiyoruz" ;
+    }
+    public static double randomAyar( double upperbound){
+        Random random = new Random();
+        int intRandom = random.nextInt(100);
+        double doubleRandom = random.nextDouble(100);
+        float floatRandom = random.nextFloat();
+        return doubleRandom * upperbound ;
+    }
+    public void balSee(){
+        System.out.println("ismininiz : \n" + isim + "\nSizin suanki bakiyeniz : \n"+bal);
+    }
+    double bal = 0;
     double fee = 2;
     public void addBal(double num){
-        bal =  num - fee ;
+        Account.this.bal =  num - fee ;
     }
     public void transfer(Account whom , double howmc){
         if (bal >= howmc){
