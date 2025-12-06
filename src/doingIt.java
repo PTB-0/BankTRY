@@ -48,7 +48,7 @@ public class doingIt {
                     SelectedACC1.addBal(howmny);
                     break;
                 case "4" , "4." , "maden alma" :
-                    break;
+                    System.out.println("Hangi madenden almak istersiniz?\n ALTIN \n GÜMÜŞ \n PLATIN");
             }
         }
     }
