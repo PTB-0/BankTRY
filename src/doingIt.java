@@ -12,6 +12,15 @@ public class doingIt {
                     break;
                 case "2" , "2." , "transfer" , "2. transfer","2 transfer","2.transfer","2transfer" :
                     System.out.println(AccountCrate.AccountMaker.accounts);
+                    System.out.println("Transfer yapacağın kişi kim");
+                    java.lang.String howm = in.next();
+                    in.reset();
+                    System.out.println("Ne kadar yapacaksın");
+                    double howmny = in.nextDouble();
+                    in.reset();
+                    System.out.println("Hesap ID nizi girin");
+                    String ID = in.next();
+                    Account SelAcc =
             }
         }
     }

@@ -2,6 +2,11 @@ import java.util.ArrayList;
 import java.util.Scanner ;
 import java.util.Random ;
 public class AccountCrate {
+    public static double randomAyar(double upper){
+        Random random = new Random();
+        int intRandom = random.nextInt(2345);
+        return intRandom * upper ;
+    }
     public static class AccountMaker{
         public static ArrayList<Account> accounts = new ArrayList<>();
         public ArrayList<Account> getListAc(){
@@ -31,8 +36,7 @@ public class AccountCrate {
                         System.out.println("Hesabınızın türünü yanlış girdiğiniz için normal hesap oluşturuluyor");
                         acc = new Account(name);
                 }
-
-                acc.setIsim(acc.getIsim() +"#"+Type+);
+                acc.setIsim(acc.getIsim() +"#"+Type+randomAyar(224));
                 System.out.println(acc);
                 accounts.add(acc);
             }
