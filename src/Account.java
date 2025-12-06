@@ -1,5 +1,4 @@
 import java.util.Random;
-import java.util.SplittableRandom;
 
 public class Account{
     private String isim ;
@@ -47,12 +46,12 @@ public class Account{
             }
         }
     }
-    public void VERGI(){
-        double vergi1 = (bal / 100)-1 ;
-        double vergi2 = ((bal * 102) - 1342) * 0.001 ;
-        bal = bal - (vergi1+vergi2) ;
+    public void STOPAJ(){
+        double stopaj1 = (bal / 100)-1 ;
+        double stopaj2 = ((bal * 102) - 1342) * 0.001 ;
+        bal = bal - (stopaj1+stopaj2) ;
     }
-    public Account findByName(String name){
+    public static Account findByName(String name){
         for(Account acc : AccountCrate.AccountMaker.accounts){
             if(acc.getIsim().equalsIgnoreCase(name)){
                 return acc ;

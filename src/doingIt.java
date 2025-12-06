@@ -13,14 +13,42 @@ public class doingIt {
                 case "2" , "2." , "transfer" , "2. transfer","2 transfer","2.transfer","2transfer" :
                     System.out.println(AccountCrate.AccountMaker.accounts);
                     System.out.println("Transfer yapacağın kişi kim");
-                    java.lang.String howm = in.next();
+                    java.lang.String howm = in.nextLine();
+                    Account Hedef = Account.findByName(howm);
                     in.reset();
+                    if (Hedef == null){
+                        System.out.println("Böyle bir hesap yok");
+                        break;
+                    }
                     System.out.println("Ne kadar yapacaksın");
                     double howmny = in.nextDouble();
                     in.reset();
+                    System.out.println(AccountCrate.AccountMaker.accounts);
                     System.out.println("Hesap ID nizi girin");
                     String ID = in.next();
-                    Account SelAcc =
+                    Account Ben = Account.findByName(ID);
+                    if (Ben.bal < howmny){
+                        System.out.println("Hesabınızda yeterli para yok");
+                        while(Ben.bal < howmny){
+                            in.reset();
+                            System.out.println("Ne kadar para yollamak istiyorsunuz");
+                            howmny = in.nextDouble();
+                        }
+                    }
+                    Ben.transfer(Hedef,howmny);
+                    break;
+                case "3","3.","para ekleme" :
+                    in.reset();
+                    System.out.println("Ne kadar para eklemek istiyorsunuz");
+                    howmny = in.nextDouble();
+                    System.out.println("Şu kadar para ekliyoruz :" + howmny + "\n Lütfen eklemek istediğiniz hesabı aşağıda çıkan listeden bulup bize bildirin");
+                    System.out.println(AccountCrate.AccountMaker.accounts);
+                    ID = in.nextLine();
+                    Account SelectedACC1 = Account.findByName(ID);
+                    SelectedACC1.addBal(howmny);
+                    break;
+                case "4" , "4." , "maden alma" :
+                    break;
             }
         }
     }
