@@ -1,24 +1,41 @@
-import java.util.Scanner;
-
+import java.util.ArrayList;
+import java.util.Scanner ;
+import java.util.Random ;
 public class AccountCrate {
-    public static void main(String[] args) {
-    Scanner in = new Scanner(System.in);
-        System.out.println("isminiz ne");
-    java.lang.String name = in.next();
-        System.out.println("Account type");
-    String type = in.next();
-    Account Acc ;
-        switch (type) {
-            case "Normal":
-                Acc = new Account(name);
-                break;
-            case "yatırım":
-                Acc = new investment(name);
-                break;
-            case "maden":
-                Acc = new madeni(name);
-                break;
+    public static class AccountMaker{
+        public static ArrayList<Account> accounts = new ArrayList<>();
+        public ArrayList<Account> getListAc(){
+            return accounts;
+        }
+        public void Worker() {
+            Scanner in = new Scanner(System.in);
+            System.out.println("Yeni hesap oluşturulsunmu ? [E/h]");
+            String cevap = in.next();
+            if (cevap.equalsIgnoreCase("e")) {
+                System.out.println("name : \n");
+                String name = in.next();
+                Account acc;
+                System.out.println("Account type ? \n 1.Normal \n 2.Madeni \n 3. Yatırım ");
+                String Type = in.next();
+                switch (Type) {
+                    case "Normal":
+                        acc = new Account(name);
+                        break;
+                    case "Madeni":
+                        acc = new madeni(name);
+                        break;
+                    case "Yatırım":
+                        acc = new investment(name);
+                        break;
+                    default:
+                        System.out.println("Hesabınızın türünü yanlış girdiğiniz için normal hesap oluşturuluyor");
+                        acc = new Account(name);
+                }
 
+                acc.setIsim(acc.getIsim() +"#"+Type+);
+                System.out.println(acc);
+                accounts.add(acc);
+            }
         }
     }
 }

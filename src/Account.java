@@ -1,9 +1,11 @@
 import java.util.Random;
-
 public class Account{
     private String isim ;
     public String getIsim(){
         return isim ;
+    }
+    public void setIsim(String newOne){
+        isim = newOne ;
     }
     public Account(String isim){
         this.isim = isim ;
@@ -11,7 +13,13 @@ public class Account{
     public Account(){
         this.isim = "Bilmiyoruz" ;
     }
-    public static double randomAyar( double upperbound){
+
+    @Override
+    public String toString() {
+        return isim ;
+    }
+
+    public static double randomAyar(double upperbound){
         Random random = new Random();
         int intRandom = random.nextInt(100);
         double doubleRandom = random.nextDouble(100);
