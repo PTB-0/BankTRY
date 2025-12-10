@@ -51,7 +51,21 @@ public class doingIt {
                     System.out.println("Hangi madenden almak istersiniz?\n ALTIN \n GÜMÜŞ \n PLATIN");
                     in.reset();
                     String maden = in.next();
-                    madeni.buyMadeni(maden);
+                    System.out.println("Lütfen istediğiniz hesabı istediğiniz hesabı aşağıda çıkan listeden bulup bize bildirin");
+                    System.out.println(AccountCrate.AccountMaker.accounts);
+                    ID = in.nextLine();
+                    Account SelectedACC2 = Account.findByName(ID);
+                    SelectedACC2.madeni.buyMadeni(maden);
+                    break;
+                case "5" , "5." , "yatırım yap" :
+                    System.out.println("Lütfen istediğiniz hesabı istediğiniz hesabı aşağıda çıkan listeden bulup bize bildirin");
+                    System.out.println(AccountCrate.AccountMaker.accounts);
+                    ID = in.nextLine();
+                    Account SelectedACC3 = Account.findByName(ID);
+                    System.out.println("Ne kadar yatırım yapmak istiyorsunuz");
+                    in.reset();
+                    double howmc = in.nextDouble();
+                    SelectedACC3.investment.invest(howmc);
             }
         }
     }

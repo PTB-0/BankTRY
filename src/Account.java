@@ -1,6 +1,8 @@
 import java.util.Random;
 
 public class Account{
+    public madeni madeni;
+    public investment investment ;
     private String isim ;
     public String getIsim(){
         return isim ;
