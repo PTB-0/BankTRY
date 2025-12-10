@@ -1,6 +1,6 @@
 import java.util.Scanner ;
 public class doingIt {
-    public static void  main(String[] args) {
+    public  void  main(String[] args) {
         Scanner in = new Scanner(System.in);
         while (true) {
             System.out.println("Ne yapmak istersiniz\n SEÇENEKLER : \n 1. Hesap Oluştur \n 2. Transfer \n 3. Para ekleme \n 4. maden alma (madeni hesap) \n 5. yatırım yap (yatırım hesabı / madeni hesap)");
@@ -49,6 +49,9 @@ public class doingIt {
                     break;
                 case "4" , "4." , "maden alma" :
                     System.out.println("Hangi madenden almak istersiniz?\n ALTIN \n GÜMÜŞ \n PLATIN");
+                    in.reset();
+                    String maden = in.next();
+                    madeni.buyMadeni(maden);
             }
         }
     }

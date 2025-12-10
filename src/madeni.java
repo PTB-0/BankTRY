@@ -11,8 +11,9 @@ public class madeni extends investment {
         super("Bilmiyoruz");
     }
 
+    private static double bal;
     public static double sahipOlunanAltin ;
-    public void buyMadeni() {
+    public static void buyMadeni(String maden) {
         Scanner in = new Scanner(System.in) ;
         double istek = randomAyar(100);
         double altinG = 2300.00 ;
@@ -23,7 +24,7 @@ public class madeni extends investment {
         String ask = in.nextLine() ;
         System.out.println("Şunu alıyorsunuz : " + ask);
         in.reset();
-        if (ask.equals("Altın")){
+        if (ask.equals("altın")){
             System.out.println("Gram fiyatı :" + altinG);
             System.out.println("Ne kadar almak istersiniz (Gram olarak)");
             in.reset();
@@ -35,8 +36,8 @@ public class madeni extends investment {
                 double sahipOlunanAltin = howmc ;
                 bal = bal - odenmek ;
             }
-        } else if (ask.equals("Gümüş")) {
-            System.out.println("Gram fiyatı :" + gumusG);
+        } else if (ask.equals("gümüş")) {
+            System.out.println("gram fiyatı :" + gumusG);
         } else if (ask.equals("Platin")) {
             System.out.println("Gram fiyatı :" + platinG);
         }
